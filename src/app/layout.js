@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
                 color: "white",
               }}
             >
-              <Link href="/">Payment Module</Link>
+
 
               <div>
                 <button
@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
 
               <div>
                 <button
-                  onClick={() => toggleMenu("runs")}
+                  onClick={() => toggleMenu("automatic-payment-module")}
                   style={{
                     background: "none",
                     border: "none",
@@ -124,18 +124,45 @@ export default function RootLayout({ children }) {
                     alignItems: "center",
                   }}
                 >
-                  Runs
-                  <span>{expandedMenu === "runs" ? "▼" : "▶"}</span>
+                  Automatic Payment Module
+                  <span>{expandedMenu === "automatic-payment-module" ? "▼" : "▶"}</span>
                 </button>
-                {expandedMenu === "runs" && (
+                {expandedMenu === "automatic-payment-module" && (
                   <div style={{ paddingLeft: "1rem", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-                    <Link href="/runs/active">Active Runs</Link>
-                    <Link href="/runs/history">History</Link>
+                    <Link href="/automatic-payment-module/create-subscription">Create Subscription</Link>
+                    <Link href="/automatic-payment-module/recurauth">Recur Auth</Link>
+                    <Link href="/automatic-payment-module/cancel-subscription">Cancel Subscription</Link>
                   </div>
                 )}
               </div>
 
-              <Link href="/settings">Settings</Link>
+              <div>
+                <button
+                  onClick={() => toggleMenu("secure-card-storage-module")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    color: "inherit",
+                    cursor: "pointer",
+                    width: "100%",
+                    textAlign: "left",
+                    padding: "0.5rem",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  Secure Card Storage Module
+                  <span>{expandedMenu === "secure-card-storage-module" ? "▼" : "▶"}</span>
+                </button>
+                {expandedMenu === "secure-card-storage-module" && (
+                  <div style={{ paddingLeft: "1rem", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                    <Link href="/secure-card-storage-module/authorize-payment">Authorize Payment</Link>
+                    <Link href="/secure-card-storage-module/capture">Capture Payment</Link>
+                    <Link href="/secure-card-storage-module/void-payment">Void Payment</Link>
+                  </div>
+                )}
+              </div>
             </nav>
           </aside>
 

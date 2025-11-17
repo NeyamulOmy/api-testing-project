@@ -44,7 +44,7 @@ export default function TransactionDetails() {
       sx={{ maxWidth: 500, mx: "auto", display: "flex", flexDirection: "column", gap: 2 }}
     >
       <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
-        Refund
+        Transaction Details
       </Typography>
       <TextField label="Transaction Id" name="transactionId" value={form.transactionId} onChange={handleChange} required />
 

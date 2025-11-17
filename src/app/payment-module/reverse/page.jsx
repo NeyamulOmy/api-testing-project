@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Box, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-export default function RefundForm() {
+export default function ReverseForm() {
   const router = useRouter();
   const [form, setForm] = useState({
     transactionId: "cd44e68f-059a-356e-86cd-542daee0c401"
@@ -43,7 +43,7 @@ export default function RefundForm() {
       sx={{ maxWidth: 500, mx: "auto", display: "flex", flexDirection: "column", gap: 2 }}
     >
       <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
-        Refund
+        Reverse Transaction
       </Typography>
       <TextField label="Transaction Id" name="transactionId" value={form.transactionId} onChange={handleChange} required />
 
