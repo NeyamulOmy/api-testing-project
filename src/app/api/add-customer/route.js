@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-
+import { Transaction, initDB } from "@/lib/sequelize";
 export async function POST(req) {
   const payload = await req.json();
 
@@ -17,6 +17,24 @@ export async function POST(req) {
   });
 
   const data = await apiRes.json();
+  const transactionId = data["transaction-id"];
+  // ensure DB initialized (lightweight; initDB does authenticate + sync)
+    try {
+      await initDB();
+    } catch (err) {
+      // optional: log init error but continue
+      console.error('DB init error:', err);
+    }
+  if (transactionId) {
+    try {
+      await Transaction.create({
+        transactionId,
+      });
+    } catch (err) {
+      // handle duplicate key or DB errors as needed
+      console.error('Failed to save transaction:', err);
+    }
+  }
   console.log("Add Customer Response:", data);
   return NextResponse.json(data);
 }
