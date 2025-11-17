@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import { Box, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 export default function DirectSaleForm() {
@@ -79,7 +79,13 @@ export default function DirectSaleForm() {
 
       <TextField label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
 
-      <TextField label="Currency" name="currency" type="text" value={form.currency} onChange={handleChange} required />
+      <FormControl fullWidth required>
+        <InputLabel>Currency</InputLabel>
+        <Select name="currency" value={form.currency} label="Currency" onChange={handleChange}>
+          <MenuItem value="KYD">KYD</MenuItem>
+          <MenuItem value="USD">USD</MenuItem>
+        </Select>
+      </FormControl>
 
       <TextField label="Amount" name="amount" type="number" value={form.amount} onChange={handleChange} required />
 
