@@ -17,6 +17,6 @@ export async function POST(req) {
 
   const data = await apiRes.json();
   
-  console.log("Direct Sale Response:", data);
+  console.log("Reverse Response:", data);
   return NextResponse.json(data);
 }

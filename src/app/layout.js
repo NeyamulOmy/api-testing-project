@@ -100,7 +100,7 @@ export default function RootLayout({ children }) {
                   <div style={{ paddingLeft: "1rem", display: "flex", flexDirection: "column", gap: "0.25rem" }}>
                     <Link href="/payment-module/add-customer" className="mb-2 border-b-black shadow-2xl">Add Customer</Link>
                     <Link href="/payment-module/direct-sale" className="mb-2 border-b-black shadow-2xl">Direct Sale With Card</Link>
-                    <Link href="/payment-module/saved-card" className="mb-2 border-b-black shadow-2xl">Sale With Saved Cards</Link>
+                    <Link href="/payment-module/saved-card-sale" className="mb-2 border-b-black shadow-2xl">Sale With Saved Cards</Link>
                     <Link href="/payment-module/refund" className="mb-2 border-b-black shadow-2xl">Refund a transaction</Link>
                     <Link href="/payment-module/reverse" className="mb-2 border-b-black shadow-2xl">Reverse a transaction</Link>
                     <Link href="/payment-module/transaction-details" className="mb-2 border-b-black shadow-2xl">Get Transaction Details</Link>

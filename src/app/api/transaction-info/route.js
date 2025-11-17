@@ -6,7 +6,7 @@ export async function POST(req) {
     `${process.env.API_USERNAME}:${process.env.API_PASSWORD}`
   ).toString("base64");
 
-  const apiRes = await fetch(`${process.env.API_BASE_URL}/three-step`, {
+  const apiRes = await fetch(`${process.env.API_BASE_URL}/transaction-info`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,6 +17,6 @@ export async function POST(req) {
 
   const data = await apiRes.json();
   
-  console.log("Direct Sale Response:", data);
+  console.log("Transaction Response:", data);
   return NextResponse.json(data);
 }
